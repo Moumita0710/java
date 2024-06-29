@@ -176,42 +176,45 @@ public class AdvancedSalarySystem {
         System.out.print("Enter your leave days:");
         int noOfLeaveDays=sc.nextInt();
         System.out.print("Enter conveyance allowance in %:");
-        double conveyance=sc.nextFloat();
+        float conveyance=sc.nextFloat();
         System.out.print("Enter Medical Allowance in %:");
         int medical=sc.nextInt();
         System.out.print("Enter Other Allowance in %:");
         int other=sc.nextInt();
         System.out.print("Enter your basic salary:");
-        double salary=sc.nextInt();
-        double yearlySalary=salary*12;
+        float salary=sc.nextInt();
+        float yearlySalary=salary*12;
         System.out.println("Your yearly salary is:"+yearlySalary);
         System.out.print("Enter Professional Tax  in %:");
-        double profTax=sc.nextInt();
+        float profTax=sc.nextInt();
         int paidDays=monthDays-noOfLeaveDays;
         System.out.println("Your paid days are:"+paidDays);
-        double leaveAmt=(salary/monthDays)*noOfLeaveDays;
+        float leaveAmt=(salary/monthDays)*noOfLeaveDays;
         System.out.println("Your leave amount is:"+leaveAmt);
-        double conveyanceAmt=yearlySalary*conveyance/100;
+        float conveyanceAmt=yearlySalary*conveyance/100;
         System.out.println("Your conveyance amount is:"+conveyanceAmt);
-        double medicalAllowance=yearlySalary*medical/100;
+        float medicalAllowance=yearlySalary*medical/100;
         System.out.println("Your medical allowance amount is:"+medicalAllowance);
-        double otherAllowance=yearlySalary*other/100;
+        float otherAllowance=yearlySalary*other/100;
         System.out.println("Your medical allowance amount is:"+otherAllowance);
-        double ctc=(yearlySalary+conveyanceAmt+medicalAllowance+otherAllowance);
+        float ctc=(yearlySalary+conveyanceAmt+medicalAllowance+otherAllowance);
         System.out.println("Your CTC is:"+ctc);
-        double totalAllowance=conveyanceAmt+medicalAllowance+otherAllowance;
+        float totalAllowance=conveyanceAmt+medicalAllowance+otherAllowance;
         System.out.println("Your total allowance amount is:"+totalAllowance);
-        double profTaxAmt=(salary-leaveAmt)-(ctc*profTax/100);
+        float profTaxAmt=(salary-leaveAmt)-(ctc*profTax/100);
         System.out.println("Your professional tax amount is:"+profTaxAmt);
-        double totalDeduction=(profTaxAmt-leaveAmt)+salary;
+        float totalDeduction=(profTaxAmt-leaveAmt)+salary;
         System.out.println("Your total deduction amount is:"+totalDeduction);
-        double totalEarningMonthly=(conveyanceAmt+medicalAllowance+otherAllowance);
+        float totalEarningMonthly=(salary*conveyance/100)+(salary*medical/100)+(salary*other/100);
         System.out.println("Your total monthly earning from allowances are:"+totalEarningMonthly);
-        double netSalary=(totalEarningMonthly+salary)-totalDeduction;
+        float netSalary=(totalEarningMonthly+salary)-totalDeduction;
         System.out.println("Your total net salary is:"+netSalary);
 
     }
 }
+
+
+
 
 
 
