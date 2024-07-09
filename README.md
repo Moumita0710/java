@@ -116,7 +116,6 @@ public class PasswordChecker {
                 } else if (!enterPassword.equals(setPassword)) {
                     System.out.println("Wrong password... try 0 more times out of 0");
                 }
-
             }
         }
         else {
@@ -124,7 +123,6 @@ public class PasswordChecker {
             enterPassword = sc.next();
             System.out.println("You have reached your try limit");
         }
-
     }}
 
 
@@ -140,8 +138,7 @@ public class AdvancedSalarySystem {
         String empName=sc.next();
         System.out.print("For which month and year you want your salary statement:");
         int month=sc.nextInt();
-
-        switch (month){
+         switch (month){
             case 1: System.out.println("January 2024");
                 break;
             case 2: System.out.println("February 2024");
@@ -168,9 +165,7 @@ public class AdvancedSalarySystem {
                 break;
             default : System.out.println(" Invaild...");
                 break;
-
         }
-
         System.out.print("Your total working days are:");
         int monthDays=sc.nextInt();
         System.out.print("Enter your leave days:");
@@ -209,11 +204,43 @@ public class AdvancedSalarySystem {
         System.out.println("Your total monthly earning from allowances are:"+totalEarningMonthly);
         float netSalary=(totalEarningMonthly+salary)-totalDeduction;
         System.out.println("Your total net salary is:"+netSalary);
-
     }
 }
 
+###Billing System
+package June_22;
+import java.util.Scanner;
+public class BillingSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter list size:");
+        int n = sc.nextInt();
+        String product[] = new String[n];
+        int i;
+        for (i = 0; i < product.length; i++) {
+            System.out.println("Enter Product Name:" + (i + 1));
+            product[i] = sc.next();
+        }
+             int price[] = new int[n];
+        for (  int j = 0; j < product.length; j++) {
+            System.out.println("Enter product price" + (j + 1));
+            price[j] = sc.nextInt();
+        }
+        System.out.println("\t Your bill");
+        System.out.println("Sn.\t Product \t\tPrice");
+        System.out.println("1\t" + product[0] + "\t\t\t" + price[0]);
+        System.out.println("2\t" + product[1] + "\t\t\t" + price[1]);
+        System.out.println("3\t" + product[2] + "\t\t\t" + price[2]);
+        System.out.println("-------------------------------");
+        int sum = 0;
+        for (int k = 0; k < price.length; k++) {
+            sum +=price[k];
+        }
+        System.out.println("Total=" + sum);
+        System.out.println("-------------------------------");
 
+}
+}
 
 
 
