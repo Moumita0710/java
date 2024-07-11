@@ -35,7 +35,8 @@ public class BillingSystem2 {
                     System.out.println("Tatal="+sum);
                     System.out.println("Gst = 18%");
                     System.out.println("-------------------------------");
-                    System.out.println("Total amount after gst is="+(sum+gst));
+                    System.out.println("Total amount including gst is="+(sum+gst));
+                    System.out.println("-------------------------------");
 
                 }
                 else if(select=='N'||select=='n'){
