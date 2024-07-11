@@ -45,7 +45,7 @@ public class BillingSystem2 {
                     System.out.println("2\t" + product[1] + "\t\t\t" + price[1]);
                     System.out.println("3\t" + product[2] + "\t\t\t" + price[2]);
                     System.out.println("-------------------------------");
-                    System.out.println("Tatal="+sum);
+                    System.out.println("Total="+sum);
                     System.out.println("-------------------------------");
                 }
                 else{
