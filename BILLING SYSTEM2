@@ -6,19 +6,18 @@ public class BillingSystem2 {
         System.out.print("Enter list size:");
         int size=sc.nextInt();
         String product[] = new String[size];
-        int i;
-        for(i=0;i<product.length;i++){
+        for(int i=0;i<product.length;i++){
             System.out.println("Enter Product Name:"+(i+1));
             product[i]=sc.next();
         }
-        int price[]=new int[size];
-        for(int j=0;j< product.length;j++){
-            System.out.println("Enter product price"+(j+1));
-            price[j]=sc.nextInt();
+        double price[]=new double[size];
+        for(int i=0;i< product.length;i++){
+            System.out.println("Enter product price"+(i+1));
+            price[i]=sc.nextInt();
         }
         int sum=0;
-        for(int k=0;k< price.length;k++){
-            sum+=price[k];
+        for(int i=0;i< price.length;i++){
+            sum+=price[i];
         }
 
         System.out.println("Do You Want to add GST [Y/N]");
@@ -26,32 +25,31 @@ public class BillingSystem2 {
                 if(select=='Y'||select=='y'){
                     double gst;
                     gst=sum*18/100;
-                    System.out.println("Sn.\t Product \t\tPrice");
-                    System.out.println("1\t" + product[0] + "\t\t\t" + price[0]);
-                    System.out.println("2\t" + product[1] + "\t\t\t" + price[1]);
-                    System.out.println("3\t" + product[2] + "\t\t\t" + price[2]);
+                    System.out.println("-------- Output --------");
+                    for (int i = 0; i< product.length; i++) {
+                        System.out.println((i + 1) + "\t\t" + product[i] + "\t\t" + price[i]);
+                    }
                     System.out.println("-------------------------------");
 
-                    System.out.println("Tatal="+sum);
+                    System.out.println("Total="+sum+"/-");
                     System.out.println("Gst = 18%");
-                    System.out.println("-------------------------------");
-                    System.out.println("Total amount including gst is="+(sum+gst));
-                    System.out.println("-------------------------------");
-
+                    System.out.println("---------------------------------------");
+                    System.out.println("Total amount including gst is="+(sum+gst)+"/-");
+                    System.out.println("---------------------------------------");
                 }
                 else if(select=='N'||select=='n'){
-                    System.out.println("Sn.\t Product \t\tPrice");
-                    System.out.println("1\t" + product[0] + "\t\t\t" + price[0]);
-                    System.out.println("2\t" + product[1] + "\t\t\t" + price[1]);
-                    System.out.println("3\t" + product[2] + "\t\t\t" + price[2]);
+                    System.out.println("-------- Output --------");
+                    for (int i = 0; i< product.length; i++) {
+                        System.out.println((i + 1) + "\t\t" + product[i] + "\t\t" + price[i]);
+                    }
                     System.out.println("-------------------------------");
-                    System.out.println("Total="+sum);
+                    System.out.println("Total="+sum+"/-");
                     System.out.println("-------------------------------");
                 }
                 else{
                     System.out.println("Invalid!!!");
                 }
         }
-        
+
 }
 
