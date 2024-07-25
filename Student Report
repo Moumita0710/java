@@ -1,0 +1,120 @@
+import java.util.Scanner;
+public class Student {
+    String name;
+    int rollNo;
+    int JAVA, CPlus, Go, Ruby, CSharp, Python;
+    int total = 100;
+    int min = 27;
+
+    void details() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your name:");
+        name = sc.nextLine();
+        System.out.print("Enter Your Roll Number:");
+        rollNo = sc.nextInt();
+    }
+
+    void marks() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Your JAVA Marks:");
+        JAVA = sc.nextInt();
+        System.out.print("Enter Your C++ Marks:");
+        CPlus = sc.nextInt();
+        System.out.print("Enter Your Go Marks:");
+        Go = sc.nextInt();
+        System.out.print("Enter Your Ruby Marks:");
+        Ruby = sc.nextInt();
+        System.out.print("Enter Your C# Marks:");
+        CSharp = sc.nextInt();
+        System.out.print("Enter Your Python Marks:");
+        Python = sc.nextInt();
+    }
+
+    void result() {
+        System.out.println("Student Report Card\n" +
+                "-------------------");
+        System.out.println("Name:" + name);
+        System.out.println("Marks:");
+        if (JAVA >= min) {
+            System.out.println("JAVA=" + JAVA + "/" + total);
+        } else {
+            System.out.println("JAVA=" + JAVA + "/" + total + "F");
+        }
+        if (CPlus >= min) {
+            System.out.println("C++=" + CPlus + "/" + total);
+        } else {
+            System.out.println("C++=" + CPlus + "/" + total + "F");
+        }
+        if (Go >= min) {
+            System.out.println("Go=" + Go + "/" + total);
+        } else {
+            System.out.println("Go=" + Go + "/" + total + "F");
+        }
+        if (Ruby >= min) {
+            System.out.println("Ruby=" + Ruby + "/" + total);
+        } else {
+            System.out.println("Ruby=" + Ruby + "/" + total + "F");
+        }
+        if (CSharp >= min) {
+            System.out.println("C#=" + CSharp + "/" + total);
+        } else {
+            System.out.println("C#=" + CSharp + "/" + total + "F");
+        }
+        if (Python >= min) {
+            System.out.println("Python=" + Python + "/" + total);
+        } else {
+            System.out.println("Python=" + Python + "/" + total + "F");
+        }
+    }
+    void calc(){
+        int sum=JAVA+ CPlus+Go+ Ruby + CSharp+ Python;
+        System.out.println("Total="+sum+"/600");
+        float percentage=(float)(sum*100/600);
+        System.out.println("Percentage="+percentage+"%");
+        if (min <= JAVA && min <= Python && min <= Go && min <= Ruby && min <= CPlus && min <= CSharp)
+        {
+            System.out.println("Pass");
+            if(percentage>80 && percentage<100){
+                System.out.println("Grade A");
+            } else if (percentage>60 && percentage<80) {
+                System.out.println("Grade B");
+            } else if (percentage>40 && percentage<60) {
+                System.out.println("Grade C");
+            } else if (percentage>30 && percentage<40) {
+                System.out.println("Grade D");
+            }
+        }
+        else{
+            System.out.println("Fail");
+        }
+    }
+//    void invalid() {
+//       while(JAVA>100){
+//            System.out.println("Invalid!!!....Enter number between 0-100");
+//        }
+//        while(CPlus> 100) {
+//            System.out.println("Invalid!!!....Enter number between 0-100");
+//        }
+//        while (Go> 100) {
+//            System.out.println("Invalid!!!....Enter number between 0-100");
+//        }
+//        while(Ruby > 100) {
+//            System.out.println("Invalid!!!....Enter number between 0-100");
+//        }
+//        while(CSharp < 0 && CSharp > 100) {
+//            System.out.println("Invalid!!!....Enter number between 0-100");
+//        }
+//        if (Python < 0 && JAVA > Python) {
+//            System.out.println("Invalid!!!....Enter number between 0-100");
+//        }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Student st = new Student();
+        st.details();
+        st.marks();
+        st.result();
+        st.calc();
+     //   st.invalid();
+    }
+}
