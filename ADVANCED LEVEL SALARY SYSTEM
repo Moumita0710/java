@@ -1,0 +1,91 @@
+package June_22;
+import java.util.Scanner;
+public class Employee {
+    String name, id, designation, department;
+    int salary, med = 1500;
+    float hra, da, pf, gs, ns;
+    Scanner sc = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        Employee emp = new Employee();
+        emp.data();
+        emp.HouseRent();
+        emp.DA();
+        emp.PF();
+        emp.Medical();
+        emp.grossSalary();
+        emp.netSalary();
+        System.out.println();
+        System.out.println("|----------------------|");
+        System.out.println("|Employee Salary Detail|");
+        System.out.println("|----------------------|");
+        System.out.println();
+        emp.op();
+
+    }
+
+    void data() {
+        while (true) {
+            System.out.print("Enter Your Name:");
+            name = sc.nextLine();
+            if (!name.isEmpty()) {
+                break;
+            }
+                else {
+                System.out.println("Name cannot be empty");
+            }
+
+        }
+
+            System.out.print("Enter Your ID:");
+            id = sc.next();
+            System.out.print("Enter your Basic Salary:");
+            salary = sc.nextInt();
+            while(salary<0){
+            System.out.println("Salary must be in positive number");
+            System.out.print("Enter your Basic Salary:");
+            salary = sc.nextInt();
+            }
+            System.out.print("Enter Your Designation:");
+            designation = sc.next();
+            System.out.print("Enter Your Department:");
+            department = sc.next();
+    }
+    float HouseRent(){
+        hra=(salary*20/100);
+        return hra;
+    }
+    float DA(){
+        da=(salary*10/100);
+        return da;
+    }
+    float PF(){
+        pf=(salary*12/100);
+        return pf;
+    }
+    int Medical(){
+        return med;
+    }
+    float grossSalary(){
+        gs=salary+hra+da+med;
+        return gs;
+    }
+    float netSalary(){
+        ns=gs-pf;
+        return ns;
+    }
+    void op(){
+        System.out.println("Name:"+name);
+        System.out.println("Id:"+id);
+        System.out.println("Designation:"+designation);
+        System.out.println("Department:"+department);
+        System.out.println("Basic Salary:"+salary);
+        System.out.println("House Rent Allowance (HRA):"+hra);
+        System.out.println("Dearness Allowance (DA):"+da);
+        System.out.println("Provident Fund (PF):"+pf);
+        System.out.println("Medical Allowance:"+med);
+        System.out.println("Gross Salary:"+gs);
+        System.out.println("Net Salary:"+ns);
+    }
+
+}
