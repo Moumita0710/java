@@ -8,11 +8,6 @@
             this.client_city=client_city;
             this.client_creditlimit=client_creditlimit;
         }
-//        String clientname(){
-//            System.out.println("\"Moumita\", \"Jiya\", \"Onkita\", \"Priyanka\", \"Ankita\", \"Aniket\", \"Riya\", \"Anish\", \"Ashwin\", \"Krish");
-//                return clientname();
-//        }
-
     }
     class Orders extends Clients{
         String orderid[];
@@ -71,7 +66,7 @@
             Creditlimit cl = new Creditlimit(clientname1, client_city1, client_creditlimit1, orderid1, orderno1, location1, amount1, gst1);
             cl.info();
             cl.calc();
-           // cl.clientname();
+          
         }
 
         }
