@@ -1,0 +1,26 @@
+package ComparableEx;
+public class CompClass implements Comparable<CompClass>{
+    int roll_no;
+    String name;
+    int std;
+
+    public CompClass(String name, int std, int roll_no) {
+        this.name = name;
+        this.std = std;
+        this.roll_no = roll_no;
+    }
+
+    public int compareTo(CompClass arg){
+      // return (int)(this.name.compareTo(arg.name));
+        return (int) (this.roll_no- arg.roll_no);
+    }
+
+    @Override
+    public String toString() {
+        return "CompClass{" +
+                "roll_no=" + roll_no +
+                ", name='" + name + '\'' +
+                ", std=" + std +
+                '}';
+    }
+}
