@@ -1,0 +1,24 @@
+import java.util.Locale;
+
+public class Locale_Ex {
+    public static void main(String[] args) {
+        Locale l1=new Locale("mr","IN");
+        System.out.println("Country="+l1.getCountry());
+        System.out.println("Display language="+l1.getDisplayLanguage());
+        System.out.println("Display name="+l1.getDisplayName());
+        Locale loc[]=Locale.getAvailableLocales();
+        System.out.println("Installed Locale:");
+        for(Locale ob:loc){
+            if(ob.getCountry().equals("IN")){
+                System.out.println(ob.getDisplayName()+"----"+ob.getCountry());
+                System.out.println("Language="+ob.getLanguage());
+            }
+        }
+        //create generic english speaking locale.
+        Locale locale1=new Locale("en");
+        //create english speaking, canadian locale.
+        Locale locale2=new Locale("en","CA");
+
+
+    }
+}
