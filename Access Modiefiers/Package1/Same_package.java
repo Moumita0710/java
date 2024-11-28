@@ -1,15 +1,8 @@
 package Package1;
 
-public class Protection{
-    int n=1;
-    private int pri_n=2;
-    protected int pro_n=3;
-    public int pub_n=4;
-    public Protection(int n, int pri_n, int pro_n, int pub_n){
-        this.n=n;
-        this.pri_n=pri_n;
-        this.pro_n=pro_n;
-        this.pub_n=pub_n;
+public class Same_package{
+    Same_package(int n, int pri_n, int pro_n,  int pub_n){
+        //super( n, pri_n, pro_n, pub_n);
         System.out.println(n);
         System.out.println(pri_n);
         System.out.println(pro_n);
@@ -21,7 +14,8 @@ public class Protection{
         System.out.println(p.n);
         System.out.println(p.pro_n);
         System.out.println(p.pub_n);
-        System.out.println(p.pri_n);
-
+        //private access cannot be accessed in another class even it is in same package.
+        //System.out.println(d.pri_n);
     }
+
 }
