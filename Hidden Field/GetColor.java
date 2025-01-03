@@ -10,23 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ColorServlet
+ * Servlet implementation class GetColor
  */
-@WebServlet("/ColorServlet")
-public class ColorServlet extends HttpServlet {
-
+@WebServlet("/GetColor")
+public class GetColor extends HttpServlet {
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out=response.getWriter();
-		String color=request.getParameter("color");
-		out.println("<b>testing</b>");
-		out.println("<b> favourite color is</b> <font color="+color+">color</font>");
-		out.println("<form action='GetColor'>");
-		out.println("<input type='hidden' name='mycolor' value='"+color+"'>");
-		out.println("<input type='hidden' name='mysize' value='5'>");
-		out.println("<input type='submit'  value='change color'>");
-		out.println("</form>");
-		out.close();
-		
+		String c=request.getParameter("mycolor");
+		String s=request.getParameter("mysize");
+		out.println("<body bgcolor='"+c+"'>");
+		out.println("<font size='"+s+"'> got color "+c+"from last servlet using hidden field");
+		out.println("<br>Welcome to the colorful world of Java");
 	}
 
 	/**
