@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!-- setter injection -->
+    <bean name="pass" class="Com.Basic.SpringCore.Passport">
+     <property name="no" value="24"/>
+    <property name="validyear" value="2027"/>
+    </bean>
+    <bean name="per1" class="Com.Basic.SpringCore.Person">
+    <property name="id" value="204"/>
+    <property name="name" value="Moumita"/>
+    <property name="age" value="20"/>
+    <property name="phno">
+    <list>
+    <value>456687778</value>
+    <value>456687778</value>
+    <value>456687778</value>    
+    </list>
+       </property>
+    <property name="hobbies">
+    <list>
+    <value>Swimming</value>
+    <value>Singing</value>
+    <value>Reading</value>    
+    </list>
+       </property>
+      <property name="card">
+    <map>
+    <entry key="3456" value="HDFC"/>
+    <entry key="34563" value="SBI"/>
+   
+    </map>
+       </property>
+          <property name="pass">
+          <ref bean="pass"/>
+          </property> 
+   
+    </bean>
+
+</beans>
